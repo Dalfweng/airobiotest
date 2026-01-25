@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Airobio — Nous Contacter</title>
+  <meta name="description" content="Contactez AIROBIO pour une demande de devis, un diagnostic ou une intervention de dératisation et désinsectisation.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="top-contact" role="banner" aria-label="Contact">
+    <div class="wrap">
+      <a class="contact-btn" href="#contact">Nous contacter</a>
+    </div>
+  </div>
+
+  <header class="main-nav" role="navigation" aria-label="Navigation principale">
+    <div class="wrap nav-inner">
+      <a class="logo" href="home.html" aria-label="Accueil">
+        <img src="logo.png" alt="AIROBIO" />
+      </a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <button class="menu-item" data-dropdown="nettoyage" aria-haspopup="true" aria-expanded="false">Nettoyage</button>
+        <button class="menu-item" data-dropdown="deratisation" aria-haspopup="true" aria-expanded="false">Dératisation</button>
+        <a class="menu-item" href="#" role="link">Frelons | Guêpes</a>
+        <button class="menu-item" data-dropdown="insectes" aria-haspopup="true" aria-expanded="false">Insectes</button>
+      </nav>
+    </div>
+
+    <div class="dropdown" data-for="nettoyage" aria-hidden="true">
+      <div class="dropdown-inner wrap">
+        <a href="diogene.html">Diogène et logement insalubre</a>
+        <a href="vitres.html">Vitres</a>
+        <a href="desinfection.html">Désinfection</a>
+        <a href="copro.html">Copropriétés et bureaux</a>
+        <a href="fin_de_chantier.html">Fin de chantiers</a>
+      </div>
+    </div>
+
+    <div class="dropdown" data-for="deratisation" aria-hidden="true">
+      <div class="dropdown-inner wrap">
+        <a href="souris.html">Souris</a>
+        <a href="#">Rats</a>
+        <a href="#">Taupes</a>
+      </div>
+    </div>
+
+    <div class="dropdown" data-for="insectes" aria-hidden="true">
+      <div class="dropdown-inner wrap">
+        <a href="#">Punaise diabolique</a>
+        <a href="#">Moustique</a>
+        <a href="#">Blattes &amp; Cafards</a>
+        <a href="punaise_de_lit.html">Punaise de lit</a>
+        <a href="puces.html">Puces</a>
+        <a href="chenilles.html">Chenilles</a>
+        <a href="fourmis.html">Fourmis</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap page-contact">
+    <h1 class="page-title">ON SE CONTACT ?</h1>
+
+    <section class="contact-intro">
+      <div class="intro-icon">🌿</div>
+      <h2 class="contact-heading">ENSEMBLE, FAISONS RESPIRER VOS ESPACES</h2>
+      
+      <p>Vous avez un projet, une question ou besoin d'un accompagnement personnalisé ? L'équipe AIROBIO est à votre écoute pour vous aider à améliorer la qualité de l'air domestique.</p>
+      
+      <p>Que vous soyez particuliers, entreprises ou collectivités, nous vous conseillons sur nos solutions de purification, de mesure d'air intérieur.</p>
+    </section>
+
+    <section id="contact" class="contact-info">
+      <h2 class="contact-heading">📞 NOS COORDONNÉES</h2>
+      
+      <div class="contact-details-grid">
+        <div class="contact-detail">
+          <h3>Adresse</h3>
+          <p> <a target="_new" href="https://maps.app.goo.gl/GQatNvzWkhyMUNzG8">16 Place de la Révolution<br>47300 Villeneuve-sur-Lot</a></p>
+        </div>
+        
+        <div class="contact-detail">
+          <h3>Email</h3>
+          <p>airobio@orange.fr</p>
+        </div>
+        
+        <div class="contact-detail">
+          <h3>Téléphone</h3>
+          <p>
+            <a href="tel:0553703369">05 53 70 33 69</a><br>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-hours">
+        <h3>⏰ Horaires d'ouverture de l'agence</h3>
+        <ul>
+          <li><strong>Lundi - Vendredi :</strong> 9h00-12h00 | 14h00-18h00</li>
+          <li><strong>Samedi et Dimanche :</strong> Fermé</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <h2 class="contact-heading">NOUS CONTACTER PAR EMAIL :</h2>
+      
+      <form class="contact-form" method="POST" action="contact-handler.php">
+        <div class="form-group">
+          <label for="name">Nom et Prénom</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Entreprise (facultatif)</label>
+          <input type="text" id="company" name="company">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Numéro de téléphone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span>Envoyer</span>
+          <span class="send-icon">✈️</span>
+        </button>
+
+        <p class="form-notice">Le nom de votre profil Claranet sera partagé. Lire <a href="#">les modalités</a> données de votre. Les.</p>
+      </form>
+    </section>
+
+    <section class="contact-why">
+      <div class="why-icon">💛</div>
+      <h2 class="contact-heading">POURQUOI NOUS CONTACTER ?</h2>
+      
+      <ul class="why-list">
+        <li>Pour obtenir un devis personnalisé</li>
+        <li>Pour planifier un diagnostic qualité de l'air</li>
+        <li>Pour être accompagné dans le choix d'un purificateur adapté</li>
+        <li>Pour toute question technique ou commerciale</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-banner" role="contentinfo" aria-label="Bandeau inférieur">
+    <div class="wrap">
+      <div class="banner-left" aria-hidden="false">
+        <div class="left-item phone">
+          <h4>Téléphone :</h4>
+          <div>05 53 70 33 69<br>06 49 26 22 95</div>
+        </div>
+        <div class="left-item address">
+          <h4>Adresse :</h4>
+          <div>16 Place de la Révolution<br>47300 Villeneuve-sur-Lot</div>
+        </div>
+      </div>
+
+      <div class="banner-center">
+        <a href="home.html" class="footer-logo" aria-label="Accueil">
+          <img src="logo.png" alt="Logo AIROBIO" />
+        </a>
+      </div>
+
+      <div class="banner-right">
+        <h4>Suivez-nous :</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/airobio" target="_blank" class="social-btn facebook" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/airobio" target="_blank" class="social-btn instagram" aria-label="Instagram">📷</a>
+        </div>
+        <div class="siret">SIRET : 123 456 789 00012</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
