@@ -14,7 +14,7 @@
 <body>
   <div class="top-contact" role="banner" aria-label="Contact">
     <div class="wrap">
-      <a class="contact-btn" href="#contact">Nous contacter</a>
+      <a class="contact-btn" href="contact.html">Nous contacter</a>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
       <nav class="menu" aria-label="Menu principal">
         <button class="menu-item" data-dropdown="nettoyage" aria-haspopup="true" aria-expanded="false">Nettoyage</button>
         <button class="menu-item" data-dropdown="deratisation" aria-haspopup="true" aria-expanded="false">Dératisation</button>
-        <a class="menu-item" href="#" role="link">Frelons | Guêpes</a>
+        <a class="menu-item" href="frelons.html" role="link">Frelons | Guêpes</a>
         <button class="menu-item" data-dropdown="insectes" aria-haspopup="true" aria-expanded="false">Insectes</button>
       </nav>
     </div>
@@ -45,16 +45,16 @@
     <div class="dropdown" data-for="deratisation" aria-hidden="true">
       <div class="dropdown-inner wrap">
         <a href="souris.html">Souris</a>
-        <a href="#">Rats</a>
-        <a href="#">Taupes</a>
+        <a href="rats.html">Rats</a>
+        <a href="taupes.html">Taupes</a>
       </div>
     </div>
 
     <div class="dropdown" data-for="insectes" aria-hidden="true">
       <div class="dropdown-inner wrap">
-        <a href="#">Punaise diabolique</a>
-        <a href="#">Moustique</a>
-        <a href="#">Blattes &amp; Cafards</a>
+        <a href="punaise_diabolique.html">Punaise diabolique</a>
+        <a href="moustiques.html">Moustique</a>
+        <a href="blattes.html">Blattes &amp; Cafards</a>
         <a href="punaise_de_lit.html">Punaise de lit</a>
         <a href="puces.html">Puces</a>
         <a href="chenilles.html">Chenilles</a>
@@ -67,15 +67,15 @@
     <h1 class="page-title">FOURMIS</h1>
 
     <section class="fourmis-hero">
-      <div class="diogene-grid">
-        <div class="diogene-text">
+      <div class="diogene-grid fourmis-grid">
+        <div class="diogene-text fourmis-text">
           <h2 class="diogene-heading">🐜 LE FLÉAU INVISIBLE : LES FOURMIS NUISIBLES</h2>
           
           <p>Les fourmis sont des insectes sociaux fascinants, mais leur présence à l'intérieur des habitations ou des locaux professionnels est synonyme de nuisance, voire de danger. Contrairement à une simple gêne, une infestation de fourmis peut avoir des <strong>conséquences sanitaires et matérielles importantes</strong>. AIROBIO intervient pour identifier l'espèce en cause et éradiquer la colonie à sa source.</p>
         </div>
 
-        <figure class="diogene-figure">
-          <img src="assets/fourmis-hero.png" alt="Fourmis nuisibles" />
+        <figure class="diogene-figure fourmis-figure">
+          <img class="fourmis-hero-img" src="assets/fourmis1.png" alt="Fourmis nuisibles" />
         </figure>
       </div>
     </section>
@@ -104,9 +104,12 @@
     </section>
 
     <section class="fourmis-signs">
-      <h2 class="diogene-heading">🔍LES SIGNES CLÉS D'UNE INFESTATION PROFONDE</h2>
-      
-      <p>Si vous observez ces indices, l'aide d'un professionnel est indispensable :</p>
+            <h2 class="diogene-heading">🔍LES SIGNES CLÉS D'UNE INFESTATION PROFONDE</h2>
+                  <p>Si vous observez ces indices, l'aide d'un professionnel est indispensable :</p>
+      <div class="diogene-grid">
+        <figure class="diogene-figure">
+          <img src="assets/fourmis2.png" alt="Protocole traitement fourmis" />
+        </figure>      
       
       <ul>
         <li>
@@ -119,6 +122,7 @@
           <strong>Fourmis Ailées :</strong> L'apparition soudaine de fourmis volantes (les reproducteurs ailés ou alates) signale l'envol nuptial et la création imminente de nouvelles colonies.
         </li>
       </ul>
+      </div>
     </section>
 
     <section class="fourmis-protocol">
@@ -128,7 +132,7 @@
 
       <div class="diogene-grid reverse">
         <figure class="diogene-figure">
-          <img src="assets/fourmis-protocol.png" alt="Protocole traitement fourmis" />
+          <img src="assets/fourmis3.png" alt="Protocole traitement fourmis" />
         </figure>
         <div class="diogene-text">
           <div class="protocol-steps">
@@ -187,5 +191,27 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script>
+    function setFourmisHeight() {
+      const textElement = document.querySelector('.fourmis-text');
+      const figureElement = document.querySelector('.fourmis-figure');
+      
+      if (textElement && figureElement) {
+        const textHeight = textElement.offsetHeight;
+        figureElement.style.minHeight = textHeight + 'px';
+      }
+    }
+    
+    // Au chargement complet
+    window.addEventListener('load', setFourmisHeight);
+    
+    // Au redimensionnement
+    window.addEventListener('resize', setFourmisHeight);
+    
+    // Avec délai de sécurité
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(setFourmisHeight, 100);
+    });
+  </script>
 </body>
 </html>

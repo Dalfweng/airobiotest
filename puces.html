@@ -14,20 +14,20 @@
 <body>
   <div class="top-contact" role="banner" aria-label="Contact">
     <div class="wrap">
-      <a class="contact-btn" href="#contact">Nous contacter</a>
+      <a class="contact-btn" href="contact.html">Nous contacter</a>
     </div>
   </div>
 
   <header class="main-nav" role="navigation" aria-label="Navigation principale">
     <div class="wrap nav-inner">
-      <a class="logo" href="home.html" aria-label="Accueil">
+      <a class="logo" href="index.html" aria-label="Accueil">
         <img src="logo.png" alt="AIROBIO" />
       </a>
 
       <nav class="menu" aria-label="Menu principal">
         <button class="menu-item" data-dropdown="nettoyage" aria-haspopup="true" aria-expanded="false">Nettoyage</button>
         <button class="menu-item" data-dropdown="deratisation" aria-haspopup="true" aria-expanded="false">Dératisation</button>
-        <a class="menu-item" href="#" role="link">Frelons | Guêpes</a>
+        <a class="menu-item" href="frelons.html" role="link">Frelons | Guêpes</a>
         <button class="menu-item" data-dropdown="insectes" aria-haspopup="true" aria-expanded="false">Insectes</button>
       </nav>
     </div>
@@ -45,20 +45,20 @@
     <div class="dropdown" data-for="deratisation" aria-hidden="true">
       <div class="dropdown-inner wrap">
         <a href="souris.html">Souris</a>
-        <a href="#">Rats</a>
-        <a href="#">Taupes</a>
+        <a href="rats.html">Rats</a>
+        <a href="taupes.html">Taupes</a>
       </div>
     </div>
 
     <div class="dropdown" data-for="insectes" aria-hidden="true">
       <div class="dropdown-inner wrap">
-        <a href="#">Punaise diabolique</a>
-        <a href="#">Moustique</a>
-        <a href="#">Blattes &amp; Cafards</a>
+        <a href="punaise_diabolique.html">Punaise diabolique</a>
+        <a href="moustiques.html">Moustique</a>
+        <a href="blattes.html">Blattes &amp; Cafards</a>
         <a href="punaise_de_lit.html">Punaise de lit</a>
         <a href="puces.html">Puces</a>
-        <a href="#">Chenilles</a>
-        <a href="#">Fourmis</a>
+        <a href="chenilles.html">Chenilles</a>
+        <a href="fourmis.html">Fourmis</a>
       </div>
     </div>
   </header>
@@ -72,16 +72,7 @@
           <h2 class="diogene-heading">🐾 LES PUCES : L'ENNEMI DES ANIMAUX ET DE LA MAISON</h2>
           
           <p>La puce est un insecte sauteur, dans ses ailes, de petite taille (2 à 8 mm) qui se nourrit du sang des mammifères et des oiseaux. En France, la plus fréquente est la <strong>Puce du Chat (Ctenocephalides felis)</strong>, qui est aussi la principale responsable des infestations chez les humains. L'infestation par les puces est sourcilleuse : on ne voit que 5 % de la population (les adultes sur l'animal) tandis que <strong>95 % des puces (œufs, larves, et cocons) se développent dans votre environnement</strong>, principalement sur les textiles et la literie.</p>
-        </div>
-
-        <figure class="diogene-figure">
-          <img src="assets/puce-main.png" alt="Puce de chat" />
-        </figure>
-      </div>
-    </section>
-
-    <section class="puces-dangers">
-      <h2 class="diogene-heading">🩸DANGERS ET NUISANCES : PLUS QUE DE SIMPLES PIQÛRES</h2>
+          <h2 class="diogene-heading">🩸DANGERS ET NUISANCES : PLUS QUE DE SIMPLES PIQÛRES</h2>
       
       <p>L'impact des puces est à la fois sanitaire (pour l'homme et l'animal) et au confort :</p>
       
@@ -99,6 +90,12 @@
           <strong>Prolifération Rapide :</strong> Une seule femelle pond plusieurs dizaines d'œufs par jour. Le cycle de vie très court (parfois moins de 20 jours) permet une explosion rapide de la population dans les moindres fissures, tapis et moquettes.
         </li>
       </ul>
+        </div>
+
+        <figure class="diogene-figure">
+          <img src="assets/puces4.png" alt="Puce de chat" />
+        </figure>
+      </div>
     </section>
 
     <section class="puces-protocol">
@@ -106,9 +103,9 @@
       
       <p>L'éradication des puces est un défi de taille, notamment à cause du cocon de la puce, qui peut rester en dormance (diapause) pendant plusieurs mois et échapper facilement aux insecticides. AIROBIO intervient pour briser ce cycle de vie et traiter la totalité de l'habitat :</p>
 
-      <div class="diogene-grid">
-        <figure class="diogene-figure">
-          <img src="assets/puce-protocol.png" alt="Protocole de traitement des puces" />
+      <div class="puces-protocol-grid">
+        <figure class="puces-protocol-figure">
+          <img src="assets/puces5.png" alt="Protocole de traitement des puces" class="puces-protocol-img" />
         </figure>
         <div class="diogene-text">
           <div class="protocol-steps">
@@ -181,5 +178,20 @@
   </footer>
 
   <script src="script.js" defer></script>
-</body>
+  <script>
+    function setPucesProtocolHeight() {
+      const textElement = document.querySelector('.puces-protocol-grid .diogene-text');
+      const figureElement = document.querySelector('.puces-protocol-figure');
+      if (textElement && figureElement) {
+        const textHeight = textElement.offsetHeight;
+        figureElement.style.minHeight = textHeight + 'px';
+      }
+    }
+
+    window.addEventListener('load', setPucesProtocolHeight);
+    window.addEventListener('resize', setPucesProtocolHeight);
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(setPucesProtocolHeight, 100);
+    });
+  </script>
 </html>

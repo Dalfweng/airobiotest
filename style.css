@@ -19,8 +19,15 @@ body{font-family:Arial,Helvetica,sans-serif;color:#0b0b0b;background:#f6f9fa;lin
 
 /* layout wrapper */
 .wrap{
-  padding: 5px 15px
-  
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 5px 15px;
+}
+
+/* Exception pour le navigateur */
+.main-nav .wrap {
+  max-width: none;
+  margin: 0;
 }
 
 /* TOP CONTACT (right aligned) */
@@ -494,6 +501,35 @@ body { margin: 0; }
   object-fit: cover !important;
 }
 
+/* Puces section - preserve image aspect ratio */
+.puces-hero .diogene-figure img {
+  object-fit: contain !important;
+}
+
+/* Puces protocol image height alignment */
+.puces-protocol-grid {
+  align-items: center !important;
+  display: flex;
+  gap: 22px;
+  margin: 10px 0 28px;
+}
+
+.puces-protocol-figure {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  flex: 0 0 45%;
+  max-width: 45%;
+}
+
+.puces-protocol-img {
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
 /* responsive: stack vertically and remove forced widths/heights on small screens
    match breakpoint used by the JS (940px) to keep behaviour consistent */
 @media (max-width: 940px) {
@@ -583,7 +619,6 @@ body { margin: 0; }
 p {
   font-family: "Open Sans";
   text-align: justify;
-  max-width: 90ch;
 }
 
 /* Exception : pas de max-width pour les paragraphes dans la section hero-below (texte qui s'enroule autour de l'image) */
@@ -1465,10 +1500,6 @@ h2.diogene-heading,
   flex-direction: row;
 }
 
-.fourmis-hero .diogene-figure {
-  flex: 0 0 45%;
-  overflow: hidden;
-}
 
 .fourmis-hero .diogene-figure img {
   display: block;
@@ -1889,4 +1920,42 @@ h2.diogene-heading,
   .intro-icon, .why-icon {
     font-size: 2rem;
   }
+}
+
+/* Fourmis hero image height alignment */
+.fourmis-grid {
+  align-items: center !important;
+}
+
+.fourmis-figure {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.fourmis-hero-img {
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Chenilles hero image height alignment */
+.chenilles-grid {
+  align-items: center !important;
+}
+
+.chenilles-figure {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.chenilles-hero-img {
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
 }

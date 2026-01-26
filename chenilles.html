@@ -14,7 +14,7 @@
 <body>
   <div class="top-contact" role="banner" aria-label="Contact">
     <div class="wrap">
-      <a class="contact-btn" href="#contact">Nous contacter</a>
+      <a class="contact-btn" href="contact.html">Nous contacter</a>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
       <nav class="menu" aria-label="Menu principal">
         <button class="menu-item" data-dropdown="nettoyage" aria-haspopup="true" aria-expanded="false">Nettoyage</button>
         <button class="menu-item" data-dropdown="deratisation" aria-haspopup="true" aria-expanded="false">Dératisation</button>
-        <a class="menu-item" href="#" role="link">Frelons | Guêpes</a>
+        <a class="menu-item" href="frelons.html" role="link">Frelons | Guêpes</a>
         <button class="menu-item" data-dropdown="insectes" aria-haspopup="true" aria-expanded="false">Insectes</button>
       </nav>
     </div>
@@ -45,20 +45,20 @@
     <div class="dropdown" data-for="deratisation" aria-hidden="true">
       <div class="dropdown-inner wrap">
         <a href="souris.html">Souris</a>
-        <a href="#">Rats</a>
-        <a href="#">Taupes</a>
+        <a href="rats.html">Rats</a>
+        <a href="taupes.html">Taupes</a>
       </div>
     </div>
 
     <div class="dropdown" data-for="insectes" aria-hidden="true">
       <div class="dropdown-inner wrap">
-        <a href="#">Punaise diabolique</a>
-        <a href="#">Moustique</a>
-        <a href="#">Blattes &amp; Cafards</a>
+        <a href="punaise_diabolique.html">Punaise diabolique</a>
+        <a href="moustiques.html">Moustique</a>
+        <a href="blattes.html">Blattes &amp; Cafards</a>
         <a href="punaise_de_lit.html">Punaise de lit</a>
         <a href="puces.html">Puces</a>
         <a href="chenilles.html">Chenilles</a>
-        <a href="#">Fourmis</a>
+        <a href="fourmis.html">Fourmis</a>
       </div>
     </div>
   </header>
@@ -67,14 +67,14 @@
     <h1 class="page-title">CHENILLES</h1>
 
     <section class="chenilles-hero">
-      <div class="diogene-grid reverse">
-        <div class="diogene-text">
+      <div class="diogene-grid reverse chenilles-grid">
+        <div class="diogene-text chenilles-text">
           <h2 class="diogene-heading">🐛 Attention Danger : Les Chenilles Processionnaires (Pin et Chêne)</h2>
           <p>Les Chenilles Processionnaires du Pin (Thaumetopoea pityocampa) et du Chêne (Thaumetopoea processionea) sont des lépidoptères dont la présence est un enjeu majeur de santé publique et de protection des arbres. Elles ne sont pas dangereuses par leur voracité (sauf en cas de très forte infestation), mais par leurs poils urticants, qui provoquent des réactions allergiques et des irritations parfois graves chez l'homme et les animaux. AIROBIO met en œuvre des stratégies d'éradication et de contrôle strictes, en respectant la législation en vigueur et les périodes d'intervention.</p>
         </div>
 
-        <figure class="diogene-figure">
-          <img src="assets/chenille-main.png" alt="Chenille processionnaire" />
+        <figure class="diogene-figure chenilles-figure">
+          <img class="chenilles-hero-img" src="assets/chenilles1.jpg" alt="Chenille processionnaire" />
         </figure>
       </div>
     </section>
@@ -103,10 +103,10 @@
     </section>
 
     <section class="chenilles-protocol">
-      <h2 class="diogene-heading">LE PROTOCOLE D'INTERVENTION AIROBIO : PRÉVENTION ET TRAITEMENT</h2>  
+      <h2 class="diogene-heading">🌲LE PROTOCOLE D'INTERVENTION AIROBIO : PRÉVENTION ET TRAITEMENT</h2>  
           <div class="diogene-grid">
         <figure class="diogene-figure">
-          <img src="assets/chenille-protocol.png" alt="Protocole de traitement des chenilles" />
+          <img src="assets/chenilles3.png" alt="Protocole de traitement des chenilles" />
         </figure>
         <div class="diogene-text">
           <div class="protocol-steps">
@@ -178,5 +178,27 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script>
+    function setChenillesHeight() {
+      const textElement = document.querySelector('.chenilles-text');
+      const figureElement = document.querySelector('.chenilles-figure');
+      
+      if (textElement && figureElement) {
+        const textHeight = textElement.offsetHeight;
+        figureElement.style.minHeight = textHeight + 'px';
+      }
+    }
+    
+    // Au chargement complet
+    window.addEventListener('load', setChenillesHeight);
+    
+    // Au redimensionnement
+    window.addEventListener('resize', setChenillesHeight);
+    
+    // Avec délai de sécurité
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(setChenillesHeight, 100);
+    });
+  </script>
 </body>
 </html>
