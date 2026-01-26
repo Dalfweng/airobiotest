@@ -2,6 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 /* <weight>: Use a value from 300 to 800 */
 /* <uniquifier>: Use a unique and descriptive class name */
+@font-face {
+  font-family: cooperative; /* set name */
+  src: url(/fonts/cooperative/Hafontia\ -\ Cooperative\ Regular.otf); /* url of the font */
+}
+@font-face {
+  font-family: cooperative; /* set name */
+  src: url(/fonts/Baron\ Neue\ -\ Personal\ license/Baron_Neue_Bold.otf); /* url of the font */
+}
+
+
 
 .open-sans {
   --fs-weight: 400; /* valeur par défaut */
