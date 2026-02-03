@@ -1,0 +1,1971 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* <weight>: Use a value from 300 to 800 */
+/* <uniquifier>: Use a unique and descriptive class name */
+@font-face {
+  font-family: cooperative; /* set name */
+  src: url(fonts/cooperative/Hafontia\ -\ Cooperative\ Regular.otf); /* url of the font */
+}
+@font-face {
+  font-family: Baron Neue; /* set name */
+  src: url(fonts/baron_neue/Baron\ Neue.otf); /* url of the font */
+}
+
+
+
+.open-sans {
+  --fs-weight: 400; /* valeur par défaut */
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--fs-weight);
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Simple reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Arial,Helvetica,sans-serif;color:#0b0b0b;background:#f6f9fa;line-height:1.5}
+
+/* layout wrapper */
+.wrap{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 5px 15px;
+}
+
+/* Exception pour le navigateur */
+.main-nav .wrap {
+  max-width: none;
+  margin: 0;
+}
+
+/* TOP CONTACT (right aligned) */
+.top-contact{background:#e5ecef}
+.top-contact .wrap{
+  display:flex;
+  justify-content:end;   /* <-- changement : gauche */
+  align-items:center;
+}
+.contact-btn{
+  background:#e5ecef;
+  color:#111;
+  text-decoration:underline;
+  text-transform:uppercase;
+  font-weight:700;
+  font-family: cooperative;
+  font-size: 2em;
+  border-radius:4px;
+  border:0;
+}
+.contact-btn:focus{outline:2px solid #a9bfc3}
+
+/* NAVBAR */
+:root{--nav-height:86px;--accent:#4f8087}
+.main-nav{background:var(--accent);position:relative}
+.main-nav .nav-inner{display:flex;align-items:center;gap:20px;height:var(--nav-height)}
+.logo{height:100%;display:flex;align-items:center}
+.logo img{margin-bottom:13px;width: 230px;display:block;object-fit:contain}
+
+/* MENU centered */
+.menu{display:flex;gap:36px;flex:1;justify-content:center;align-items:center}
+
+.menu-item{
+  color:#071617;
+  text-decoration:none;
+  font-weight:800;
+  font-family: cooperative;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-size:40px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  outline-offset:2px;
+}
+
+/* dropdown hover (separate rule, not nested) */
+header .Nettoyage:hover .content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #558998;
+  top: 80px;
+  width: 150px;
+  padding: 15px 20px;
+}
+
+/* ensure footer banner is visible and page content not hidden */
+:root{
+  --banner-height: 100px;
+  /* other vars (keep existing --nav-height / --accent) */
+}
+
+/* avoid content being hidden behind fixed banner */
+body {
+  padding-bottom: 0;
+}
+
+/* site banner as normal footer (full-width background) */
+footer.site-banner {
+  position: relative;
+  width: 100%;
+  background: var(--accent, #4f8087);
+  color: #fff;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  padding: 28px 0; /* vertical space to fit large logo */
+  overflow: visible;
+}
+
+/* ensure the wrap inside footer spans full viewport width (does not center the page) */
+footer.site-banner > .wrap {
+  max-width: none;     /* override global .wrap */
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  position: relative;  /* anchor for absolute children */
+  min-height: 1px;
+}
+
+/* center area (logo) - occupies full horizontal space and centers its content */
+.banner-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px; /* breathing room so logo doesn't touch pinned sides */
+  box-sizing: border-box;
+}
+
+/* large logo that visually takes the footer space */
+.footer-logo img {
+  max-height: 160px; /* change this value to make logo larger/smaller */
+  height: auto;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* left block pinned to viewport left with 15px margin */
+.banner-left {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  color: #fff;
+  text-align: left;
+}
+
+/* right block pinned to viewport right with 15px margin */
+.banner-right {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  color: #fff;
+  text-align: right;
+}
+
+/* styling for left/right content */
+.banner-left .left-item h4,
+.banner-right h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: #fff;
+  font-weight:700;
+}
+.banner-left .left-item div,
+.banner-right .siret {
+  color: #fff;
+  line-height: 1.3;
+  font-size: 14px;
+}
+
+/* social buttons */
+.social-links { display:flex; gap:10px; }
+.social-btn { display:inline-flex; align-items:center; justify-content:center; padding:6px 10px; border-radius:18px; color:#fff; text-decoration:none; font-size:13px; }
+.social-btn.facebook { background:#1877F2; }
+.social-btn.instagram { background:#E1306C; }
+
+/* make sure footer text inherits white */
+footer.site-banner, footer.site-banner * { color: inherit; }
+
+/* responsive: on small screens stop using absolute layout — stack items and center */
+@media (max-width: 900px) {
+  footer.site-banner { padding: 18px 0; }
+  footer.site-banner > .wrap { display:flex; flex-direction:column; align-items:center; gap:10px; padding:0 16px; }
+  .banner-left, .banner-right { position: static; transform: none; align-items:center; text-align:center; width:100%; justify-content:center; }
+  .banner-left { order:2; gap:12px; }
+  .banner-center { order:1; }
+  .banner-right { order:3; }
+  .footer-logo img { max-height:120px; }
+}
+
+/* RESPONSIVE */
+@media (max-width:880px){
+  :root{--nav-height:74px}
+  .main-nav .nav-inner{height:var(--nav-height)}
+  .menu{gap:16px}
+  .menu-item{font-size:16px}
+  .logo img{height:100%}
+  .dropdown-inner{flex-direction:column;align-items:stretch}
+}
+
+/* variable pour décalage du contenu quand dropdown est ouvert */
+:root{
+  --dropdown-offset: 0px;
+}
+
+/* appliquer le décalage au contenu principal (texte) */
+main.wrap{
+  /* garde l'espacement interne existant, on translate seulement verticalement */
+  transition: transform 180ms ease;
+  transform: translateY(var(--dropdown-offset));
+}
+
+/* Lorsque le dropdown est visible on peut aussi ajouter un léger shadow push (optionnel) */
+
+/* Presentation / Contact section styling */
+.presentation {padding-top: 30px; color: #0b0b0b; }
+.presentation-title {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #071617;
+}
+.presentation-contact { background: transparent; padding: 5px 0 12px; }
+.contact-heading {
+  font-family: cooperative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 0 0 10px;
+}
+.lead { margin: 6px 0 12px; font-weight: 600; color: #111; }
+.subheading { margin-top: 14px; margin-bottom: 8px; font-weight:700; }
+.presentation p { margin-bottom: 12px; color: #222; }
+.presentation ul { margin-left: 1.1rem; margin-bottom: 12px; color: #222; }
+.presentation ul li { margin-bottom: 8px; line-height: 1.45; text-align: justify;max-width: 90ch;}
+
+/* small highlight paragraph */
+.commitment { margin-top: 12px; font-weight:600; }
+
+/* responsive */
+@media (max-width: 760px) {
+  .presentation-title { font-size: 2rem; }
+  .contact-heading { font-size: 1.25rem; }
+  .wrap { padding-left: 14px; padding-right: 14px; }
+}
+
+/* BOUTIQUE */
+.boutique { padding-bottom: 30px; padding-top: 15px; background: transparent; color: #071617; }
+.boutique-inner { display:grid; grid-template-columns: 1fr 380px; gap:28px; align-items:start; max-width:1300px; margin:0 auto; padding:0 0px; }
+.boutique-title { font-size:2.8rem; margin:0 0 8px; text-transform:uppercase; letter-spacing:1px;font-family: Baron Neue; }
+.boutique-subtitle { font-size:2.5rem; font-family: cooperative; margin:0 0 12px; font-weight:700; text-transform:none; }
+.boutique-lead { margin-bottom:12px; max-width:90ch; color:#222; }
+.boutique-list { margin-left:1rem; margin-bottom:12px; color:#222; line-height:1.45; }
+.boutique-list > li { margin-bottom:14px; margin-left: 5px; margin-top: 5px;}
+.boutique-list li ul { margin-top:8px; margin-left:1.1rem; list-style:disc; }
+.boutique-list li ul li { margin: 5px 0px; }
+.boutique-content { grid-column: 1; }
+.boutique-figure { grid-column: 2; margin:0; display:flex; justify-content:center; align-items:start; }
+.boutique-image { width:100%; height:auto; max-width:380px; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,0.08); object-fit:cover; }
+
+/* responsive: stack on small screens */
+@media (max-width:900px) {
+  .boutique-inner { grid-template-columns: 1fr; }
+  .boutique-figure { order: -1; margin-bottom:18px; }
+  .boutique-title { font-size:2rem; }
+  .boutique-subtitle { font-size:1.1rem; }
+}
+
+/* Footer: left (phone+address) left-aligned, center logo expands & centered, right socials right-aligned.
+   left/right have at least 15px margin from page edges. */
+footer.site-banner { background: var(--accent, #4f8087); color: #fff; padding: 20px 0; box-shadow: 0 -2px 12px rgba(0,0,0,0.08); }
+.banner-wrap { display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:1300px; margin:0 auto; padding:0; }
+
+/* left block: side-by-side with fixed margin from left */
+.banner-left { display:flex; gap:22px; align-items:center; flex:0 0 auto; margin-left:15px; }
+.banner-left .left-item h4 { margin:0 0 6px; font-size:16px; color:#fff; }
+.banner-left .left-item div { color:#fff; line-height:1.3; }
+
+/* center: logo takes remaining space and is centered visually */
+.banner-center { flex:1 1 auto; display:flex; justify-content:center; align-items:center; padding:0 12px; }
+.footer-logo img { max-height:140px; width:auto; max-width:100%; display:block; object-fit:contain; }
+
+/* right block: attached to right with margin */
+.banner-right { display:flex; flex-direction:column; align-items:flex-end; gap:8px; flex:0 0 auto; margin-right:15px; }
+.banner-right h4 { margin:0 0 6px; font-size:16px; color:#fff; text-align:right; }
+.social-links { display:flex; gap:10px; }
+.social-btn { display:inline-flex; align-items:center; justify-content:center; padding:6px 10px; border-radius:18px; color:#fff; text-decoration:none; font-size:13px; }
+.social-btn.facebook { background:#1877F2; }
+.social-btn.instagram { background:#E1306C; }
+.siret { font-size:12px; color:rgba(255,255,255,0.95); }
+
+/* ensure footer children use white (override any previous generic rules) */
+footer.site-banner, footer.site-banner * { color: inherit; }
+.banner-wrap, .banner-left, .banner-right, .banner-center { color: #fff; }
+
+/* responsive: stack but keep logo centered and large */
+@media (max-width:900px) {
+  .banner-wrap { flex-direction:column; align-items:center; text-align:center; padding:12px 16px; gap:10px; }
+  .banner-left { order:2; margin-left:0; gap:12px; justify-content:center; }
+  .banner-center { order:1; padding:0; }
+  .banner-right { order:3; margin-right:0; align-items:center; }
+  .footer-logo img { max-height:110px; }
+}
+
+
+/* si la nav ou .nav-inner avait overflow caché, assure qu'il ne masque pas le dropdown */
+.main-nav, .main-nav .nav-inner {
+  overflow:visible;
+  position:relative; /* garantie que le dropdown se place correctement */
+}
+
+/* corrections pour menu / dropdowns */
+body { margin: 0; }
+
+.main-nav {
+  position: relative; /* permet aux dropdowns d'être positionnés par rapport au header */
+  z-index: 50;
+  margin-bottom: 0;
+}
+
+.main-nav .wrap.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* icône flèche pour les items avec dropdown */
+.menu-item[data-dropdown] {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-item[data-dropdown]::after {
+  content: "▾";
+  display: inline-block;
+  margin-left: .5rem;
+  font-size: .9em;
+  vertical-align: middle;
+  transition: transform .18s ease;
+}
+
+.menu-item[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+/*DROWPDOWN MENU STYLES*/
+/* dropdown plein largeur positionné juste sous l'en-tête */
+.dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%; /* position flush sous le header */
+  background: var(--dropdown-bg, #fff);
+  z-index: 40;
+  display: none; /* caché par défaut */
+}
+.dropdown .dropdown-inner{
+  background:var(--accent,#4f8087);
+  color:#fff;
+  padding:14px 20px;
+}
+
+/* dropdown : aligner le contenu centré et limiter sa largeur au contenu de la page */
+.dropdown .dropdown-inner.wrap {
+  margin: 0 auto;           /* centre horizontalement dans la page */
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;  /* centre les liens */
+  align-items: center;
+  gap: 18px;
+  padding-left: 20px;       /* respiration sur les côtés */
+  padding-right: 20px;
+  flex-wrap: wrap;          /* passe à la ligne si besoin */
+}
+
+/* liens du dropdown : style propre, cliquable et espacé */
+.dropdown .dropdown-inner a {
+  display: inline-block;
+  padding: 8px 12px;
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  background: transparent;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* affichage contrôlé via aria-hidden dans ton script */
+.dropdown[aria-hidden="false"] {
+  display: block;
+}
+
+/* si tu utilises une classe .wrap sur dropdown-inner, vérifie qu'elle n'ajoute pas de margin-top */
+.dropdown .dropdown-inner.wrap { margin-top: 0; }
+
+/* Image helper: align last image to the right on wide screens */
+.img-right {
+  float: right;
+  margin: 0 0 12px 18px;
+  max-width: 48%;
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .img-right {
+    float: none;
+    display: block;
+    margin: 0 auto 12px;
+    max-width: 100%;
+  }
+}
+
+/* helper to position image to the LEFT of the text on wide screens */
+.img-right {
+  float: right;
+  margin: 0 18px 12px 0;
+  max-width: 48%;
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .img-right {
+    float: none;
+    display: block;
+    margin: 0 auto 12px;
+    max-width: 100%;
+  }
+}
+
+/* --- Diogène / Insalubre grids: image à gauche, texte à droite (desktop) --- */
+.diogene-grid,
+.insalubre-grid {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  align-content: start;
+  margin: 10px 0 28px;
+}
+
+.diogene-grid .diogene-text,
+.insalubre-grid .insalubre-text,
+.diogene-grid .diogene-text,
+.insalubre-grid .diogene-text {
+  flex: 1 1 auto;
+}
+
+/* by default show the figure first (image à gauche)
+   reverse modifier (class "reverse" on grid) will place image on the right */
+.diogene-grid .diogene-figure,
+.insalubre-grid .insalubre-figure {
+  /* use percentage width so the image scales with the text column
+     and allow the JS to set the container height to match the text */
+  flex: 0 0 45%;
+  max-width: 45%;
+  display: block;
+  order: -1; /* put image before text */
+  overflow: hidden;
+  align-self: stretch; /* ensure the figure stretches to the grid height */
+}
+
+.diogene-grid.reverse .diogene-figure,
+.insalubre-grid.reverse .insalubre-figure {
+  order: 2; /* when grid has .reverse, move figure after text */
+}
+
+.diogene-grid.reverse .diogene-text,
+.insalubre-grid.reverse .insalubre-text {
+  order: 1;
+  margin: 30px 0 0;
+}
+ .diogene-text-rats {
+  margin: 0 0 0;
+}
+.diogene-text-fdc {
+  margin-top: 0;
+}
+
+.diogene-figure img,
+.insalubre-figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+}
+
+/* Puces section - preserve image aspect ratio */
+.puces-hero .diogene-figure img {
+  object-fit: contain !important;
+}
+
+/* Puces protocol image height alignment */
+.puces-protocol-grid {
+  align-items: center !important;
+  display: flex;
+  gap: 22px;
+  margin: 10px 0 28px;
+}
+
+.puces-protocol-figure {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  flex: 0 0 45%;
+  max-width: 45%;
+}
+
+.puces-protocol-img {
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* responsive: stack vertically and remove forced widths/heights on small screens
+   match breakpoint used by the JS (940px) to keep behaviour consistent */
+@media (max-width: 940px) {
+  .diogene-grid,
+  .insalubre-grid {
+    display: block;
+  }
+  .diogene-grid .diogene-figure,
+  .insalubre-grid .insalubre-figure {
+    order: 0;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 14px;
+    height: auto !important;
+  }
+  .diogene-figure img,
+  .insalubre-figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* ========= presentation: images same height as text ========= */
+.presentation-contact-inner {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* zone texte */
+.presentation-text {
+  flex: 1 1 60%;
+  min-width: 220px;
+}
+
+/* colonne d'images à droite, empilées et partageant la hauteur */
+.contact-images {
+  flex: 0 0 360px; /* largeur fixe de la colonne d'images */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box;
+  /* la hauteur est renseignée dynamiquement via JS ; par défaut auto */
+}
+
+/* chaque image prend une part égale de la hauteur de la colonne */
+.contact-images img {
+  width: 100%;
+  display: block;
+  object-fit: fill;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  flex: 1 1 0; /* partage la hauteur disponible */
+  height: auto; /* laissé pour compatibilité */
+}
+
+/* responsive : sur petits écrans, empile verticalement et images deviennent scrollables horizontalement */
+@media (max-width: 900px) {
+    .presentation-contact-inner {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .contact-images {
+        flex-direction: row;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        width: 100%;
+        height: auto !important; /* laisser le flux normal sur mobile */
+    }
+    .contact-images img {
+        width: 48%;
+        flex: 0 0 auto;
+        height: auto;
+    }
+}
+
+.presentation-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.contact-details {
+  padding-left: 30px;
+}
+p {
+  font-family: "Open Sans";
+  text-align: justify;
+}
+
+/* Exception : pas de max-width pour les paragraphes dans la section hero-below (texte qui s'enroule autour de l'image) */
+.copro-hero-below p {
+  max-width: none;
+}
+.fdc-below p {
+  max-width: none;
+  margin-bottom: 12px;
+}
+.fdc-below p.fdc-below-warn {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: large;
+}
+.fdc-below h4.fdc-h4 {
+  margin-bottom: 8px;
+}
+/* Styles spécifiques pour la page Diogène */
+.page-diogene { 
+  padding-top: 22px; 
+  padding-bottom: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Alignement / largeur identique pour la page Copro (même arrangement que Diogène) */
+.page-copro {
+  padding-top: 22px;
+  padding-bottom: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-family: Baron Neue;
+  font-weight: 800;
+  font-size: 48px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  margin: 10px 0 18px;
+}
+.page-subtitle {
+  font-family: cooperative;
+  font-weight: 800;
+  font-size: 48px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 10px 0 0px;
+}
+/* Grids réutilisables - Removed conflicting duplicate definition */
+
+.diogene-text h2.diogene-heading,
+h2.diogene-heading,
+.section-title {
+  font-family: cooperative;
+  font-weight: 800;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.vitre-heading {
+  font-family: cooperative;
+  font-weight: 800;
+  font-size: 30px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.diogene-text p {
+  color: #222;
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+.diogene-text ul.steps {
+  list-style: none;
+  padding-left: 0;
+  margin: 6px 0 0;
+}
+
+.diogene-text ul.steps li { margin-bottom: 8px; }
+
+/* Tableau deux colonnes pour les étapes/avantages (transparent) */
+.steps-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+  margin: 6px 0 0;
+}
+.steps-table th,
+.steps-table td {
+  border: none;
+  padding: 6px 12px 12px 0;
+  vertical-align: top;
+}
+.steps-table th {
+  width: 32%;
+  font-weight: 800;
+  text-transform: none;
+  color: #071617;
+  padding-right: 18px;
+}
+.steps-table td {
+  color: #222;
+  font-weight: 400;
+}
+
+/* Float layout: image at left with text wrapping around */
+.copro-hero-below {
+  overflow: auto;
+  margin-top: 12px;
+}
+  .copro-hero-below .diogene-figure.inline-moved {
+    float: left;
+    width: 38%;
+    margin: 0 20px 12px 0;
+    overflow: hidden;
+  }
+  .copro-hero-below .diogene-figure.inline-moved img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+.benefits-right {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.benefits-right li { margin-bottom: 12px; }
+
+.tree-text {
+  margin: 10px 0 0;
+}
+
+@media (max-width: 940px) {
+  .copro-hero-below .diogene-figure.inline-moved { float: none; width: 100%; margin: 0 0 12px 0; }
+  .benefits-right { overflow: visible; }
+}
+
+/* Alignement : tout le texte du tableau à gauche */
+.steps-table th,
+.steps-table td {
+  text-align: left;
+}
+
+/* Figures / images - Removed duplicate max-width constraint */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Grids : texte flexible + image qui adapte sa hauteur et conserve ratio */
+.diogene-grid,
+.insalubre-grid {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch; /* force égalité de hauteur entre colonnes */
+}
+
+/* Texte : prend l'espace disponible */
+.diogene-grid > .diogene-text,
+.insalubre-grid > .insalubre-text {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* Figure : largeur déterminée par l'image (auto) ; hauteur contrôlée par JS */
+.diogene-grid > .diogene-figure,
+.insalubre-grid > .insalubre-figure {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: auto; /* height will be set inline par JS */
+}
+
+/* Image : remplir la hauteur du conteneur, garder le ratio */
+.diogene-grid img,
+.insalubre-grid img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Responsive: empilement sur petits écrans */
+@media (max-width: 940px) {
+  .diogene-grid,
+  .insalubre-grid {
+    display: block;
+  }
+  .diogene-grid > .diogene-figure,
+  .insalubre-grid > .insalubre-figure {
+    height: auto !important;
+    margin-bottom: 18px;
+  }
+  .diogene-grid img,
+  .insalubre-grid img {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+  }
+}
+
+/* Styles pour la page Fin de Chantier */
+.page-fc {
+  padding-top: 22px;
+  padding-bottom: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Float layout for fin de chantier hero section */
+.fc-hero {
+  overflow: visible;
+}
+.fc-hero > h2.diogene-heading {
+  margin-bottom: 5px;
+  width: 100%;
+}
+.fc-hero .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+}
+.fc-hero .diogene-grid.reverse {
+  flex-direction: row;
+}
+.fc-hero .diogene-figure {
+  flex: 0 0 45%;
+  max-width: 45%;
+  overflow: hidden;
+}
+.fc-hero .diogene-figure.inline-moved {
+  flex: 0 0 45%;
+  max-width: 45%;
+  overflow: hidden;
+}
+.fc-hero .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+.fc-hero .diogene-figure.inline-moved img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.fc-hero .diogene-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.fc-hero .diogene-text p {
+  max-width: none;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* Section pour les étapes détaillées */
+.fc-hero-details {
+  padding-top: 0;
+}
+.fc-hero-details ol { margin: 0; padding-left: 20px; }
+.fc-hero-details li { margin-bottom: 12px; }
+
+/* Float layout for fin de chantier hero-below section */
+.fc-hero-below {
+  overflow: auto;
+  margin-top: 12px;
+}
+  .fc-hero-below .diogene-figure.inline-moved {
+    float: right;
+    width: 38%;
+    margin: 0 0 12px 20px;
+    overflow: hidden;
+  }
+  .fc-hero-below .diogene-figure.inline-moved img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+.fc-hero-below ol { margin: 0; padding-left: 20px; }
+.fc-hero-below li { margin-bottom: 12px; }
+
+/* Exception : pas de max-width pour les paragraphes dans la section fc-hero-below */
+.fc-hero-below p {
+  max-width: none;
+}
+
+@media (max-width: 940px) {
+  .fc-hero-below .diogene-figure.inline-moved { float: none; width: 100%; margin: 0 0 12px 0; }
+}
+
+/* Tableau transparent pour les engagements */
+.engagements-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.engagements-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.engagements-table tr:last-child {
+  border-bottom: none;
+}
+
+.engagements-table td {
+  padding: 12px 0;
+  vertical-align: top;
+}
+
+.engagements-table td:first-child {
+  width: 30%;
+}
+
+/* PAGE SOURIS - Styles */
+.page-souris {
+  padding-top: 22px;
+  padding-bottom: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.souris-hero .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.souris-hero .diogene-figure {
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.souris-hero .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.souris-hero .diogene-text {
+  flex: 1 1 auto;
+}
+
+.souris-signs,
+.souris-protocol,
+.souris-engagement {
+  margin-top: 0px;
+}
+
+.signs-list,
+.protocol-steps {
+  margin: 20px 0;
+  list-style: none;
+  padding: 0;
+}
+
+.signs-list li,
+.protocol-steps .protocol-step {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.protocol-step h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.protocol-step ul {
+  margin: 12px 0 0 20px;
+  padding-left: 20px;
+}
+
+.engagement-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+  margin: 20px 0;
+}
+
+.engagement-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.engagement-table tr:last-child {
+  border-bottom: none;
+}
+
+.engagement-table td {
+  padding: 12px 0;
+  vertical-align: top;
+}
+
+.engagement-table td:first-child {
+  width: 30%;
+  padding-right: 20px;
+}
+
+.engagement-table td:last-child {
+  padding-left: 20px;
+}
+
+.dangers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin: 20px 0;
+  border: 2px solid #4f8087;
+}
+
+.dangers-table th,
+.dangers-table td {
+  border: 1px solid #4f8087;
+  padding: 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.dangers-table th {
+  background-color: #4f8087;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dangers-table td:first-child {
+  text-align: center;
+  font-weight: bold;
+}
+
+.engagement-closing {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f0f8ff;
+  border-left: 4px solid #4f8087;
+}
+
+@media (max-width: 940px) {
+  .souris-hero .diogene-grid {
+    display: block;
+  }
+  .souris-hero .diogene-figure {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .souris-hero .diogene-figure img {
+    width: 100%;
+    height: auto;
+  }
+  .souris-signs .diogene-grid,
+  .souris-protocol .diogene-grid {
+    display: block;
+  }
+  .souris-signs .diogene-figure,
+  .souris-protocol .diogene-figure {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .souris-signs .diogene-figure img,
+  .souris-protocol .diogene-figure img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Styles spécifiques pour les sections avec images */
+.souris-signs .diogene-grid,
+.souris-protocol .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.souris-signs .diogene-figure,
+.souris-protocol .diogene-figure {
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.souris-signs .diogene-figure img,
+.souris-protocol .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+.souris-signs .diogene-text,
+.souris-protocol .diogene-text {
+  flex: 1 1 auto;
+}
+
+.souris-protocol .diogene-grid.reverse {
+  /* Use normal row direction so the .reverse modifier places the figure
+     after the text (figure on the right). Previously `row-reverse` forced
+     the visual order to the opposite side. */
+  flex-direction: row;
+}
+.img-right-rats {
+  float: right;
+  margin: 0 0 12px 18px;
+  max-width: 48%;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 900px) {
+  .img-right-rats {
+    float: none;
+    display: block;
+    margin: 0 auto 12px;
+    max-width: 100%;
+  }
+}
+
+/* PAGE PUCES - Styles */
+.page-puces {
+  padding-top: 22px;
+  padding-bottom: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.puces-hero .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.puces-hero .diogene-figure {
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.puces-hero .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+.puces-hero .diogene-text {
+  flex: 1 1 auto;
+}
+
+.puces-dangers {
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.danger-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.dangers-list {
+  margin: 20px 0;
+  list-style: none;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.dangers-list li {
+  margin-bottom: 18px;
+  padding-left: 0;
+  color: #222;
+  line-height: 1.45;
+}
+
+.puces-protocol {
+  margin-top: 40px;
+}
+
+.protocol-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.puces-protocol .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.puces-protocol .diogene-figure {
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.puces-protocol .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+.puces-protocol .diogene-text {
+  flex: 1 1 auto;
+}
+
+.protocol-steps {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.protocol-step {
+  margin-bottom: 24px;
+}
+
+.protocol-step h3 {
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.protocol-step ul {
+  margin: 12px 0 0 20px;
+  padding-left: 0;
+  color: #222;
+  line-height: 1.45;
+}
+
+.protocol-step ul li {
+  margin-bottom: 10px;
+}
+
+.puces-engagement {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f0f8ff;
+  border-left: 4px solid #4f8087;
+  border-radius: 4px;
+}
+
+.puces-engagement p {
+  margin-bottom: 12px;
+  color: #222;
+  line-height: 1.45;
+}
+
+@media (max-width: 940px) {
+  .puces-hero .diogene-grid {
+    display: block;
+  }
+  .puces-hero .diogene-figure {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .puces-hero .diogene-figure img {
+    width: 100%;
+    height: auto;
+  }
+  .puces-protocol .diogene-grid {
+    display: block;
+  }
+  .puces-protocol .diogene-figure {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .puces-protocol .diogene-figure img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* PAGE CHENILLES - Styles */
+.page-chenilles {
+  padding-top: 22px;
+  padding-bottom: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.chenilles-hero .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.chenilles-hero .diogene-figure {
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.chenilles-hero .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+.chenilles-hero .diogene-text {
+  flex: 1 1 auto;
+}
+
+.chenilles-dangers {
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.danger-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.dangers-list {
+  margin: 20px 0;
+  list-style: none;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.dangers-list li {
+  margin-bottom: 18px;
+  padding-left: 0;
+  color: #222;
+  line-height: 1.45;
+}
+
+.chenilles-protocol {
+  margin-top: 40px;
+}
+
+.protocol-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.chenilles-protocol .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.chenilles-protocol .diogene-figure {
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.chenilles-protocol .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+.chenilles-protocol .diogene-text {
+  flex: 1 1 auto;
+}
+
+.protocol-steps {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.protocol-step {
+  margin-bottom: 24px;
+}
+
+.protocol-step h3 {
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.protocol-step ul {
+  margin: 12px 0 0 20px;
+  padding-left: 0;
+  color: #222;
+  line-height: 1.45;
+}
+
+.protocol-step ul li {
+  margin-bottom: 10px;
+}
+
+.chenilles-engagement {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f0f8ff;
+  border-left: 4px solid #4f8087;
+  border-radius: 4px;
+}
+
+.chenilles-engagement p {
+  margin-bottom: 12px;
+  color: #222;
+  line-height: 1.45;
+}
+
+@media (max-width: 940px) {
+  .chenilles-hero .diogene-grid {
+    display: block;
+  }
+  .chenilles-hero .diogene-figure {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .chenilles-hero .diogene-figure img {
+    width: 100%;
+    height: auto;
+  }
+  .chenilles-protocol .diogene-grid {
+    display: block;
+  }
+  .chenilles-protocol .diogene-figure {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .chenilles-protocol .diogene-figure img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* PAGE FOURMIS - Styles */
+.page-fourmis {
+  padding-top: 22px;
+  padding-bottom: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.fourmis-hero .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+}
+
+
+.fourmis-hero .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+.fourmis-hero .diogene-text {
+  flex: 1 1 auto;
+}
+
+.fourmis-problems {
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.problem-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.problem-item {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border-left: 4px solid #4f8087;
+}
+
+.problem-item h3 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: #071617;
+}
+
+.problem-item p {
+  margin: 0;
+  color: #222;
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+.fourmis-signs {
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.signs-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.signs-list {
+  margin: 20px 0;
+  list-style: none;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.signs-list li {
+  margin-bottom: 18px;
+  padding-left: 0;
+  color: #222;
+  line-height: 1.45;
+}
+
+.fourmis-protocol {
+  margin-top: 40px;
+}
+
+.protocol-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.fourmis-protocol .diogene-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.fourmis-protocol .diogene-figure {
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.fourmis-protocol .diogene-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+.fourmis-protocol .diogene-text {
+  flex: 1 1 auto;
+}
+
+.protocol-steps {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.protocol-step {
+  margin-bottom: 24px;
+}
+
+.protocol-step h3 {
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.protocol-step p {
+  margin: 0 0 12px 0;
+  color: #222;
+  line-height: 1.45;
+}
+
+.fourmis-warning {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff3cd;
+  border-left: 4px solid #ff9800;
+  border-radius: 4px;
+}
+
+.fourmis-warning p {
+  margin: 0;
+  color: #222;
+  line-height: 1.45;
+}
+
+@media (max-width: 940px) {
+  .fourmis-hero .diogene-grid {
+    display: block;
+  }
+  .fourmis-hero .diogene-figure {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .fourmis-hero .diogene-figure img {
+    width: 100%;
+    height: auto;
+  }
+  .problems-grid {
+    grid-template-columns: 1fr;
+  }
+  .fourmis-protocol .diogene-grid {
+    display: block;
+  }
+  .fourmis-protocol .diogene-figure {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .fourmis-protocol .diogene-figure img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* PAGE CONTACT - Styles */
+.page-contact {
+  padding-top: 22px;
+  padding-bottom: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 30px 0;
+}
+
+.intro-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.contact-heading {
+  font-family: cooperative;
+  font-weight: 800;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+  color: #071617;
+}
+
+.contact-intro p {
+  max-width: 90ch;
+  margin: 0 auto 12px;
+  color: #222;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.contact-info {
+  margin-bottom: 50px;
+}
+
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 30px 0;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.contact-detail h3 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 12px 0;
+  color: #071617;
+}
+
+.contact-detail p {
+  margin: 0;
+  color: #222;
+  line-height: 1.6;
+}
+
+.contact-detail a {
+  color: #4f8087;
+  text-decoration: none;
+}
+
+.contact-detail a:hover {
+  text-decoration: underline;
+}
+
+.contact-hours {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f0f8ff;
+  border-left: 4px solid #4f8087;
+  border-radius: 4px;
+}
+
+.contact-hours h3 {
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  color: #071617;
+}
+
+.contact-hours ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.contact-hours li {
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.contact-form-section {
+  margin-bottom: 50px;
+}
+
+.contact-form {
+  background: #4f8087;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 700px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: #fff;
+  color: #4f8087;
+  border: none;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.send-icon {
+  font-size: 1.1rem;
+}
+
+.form-notice {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.form-notice a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.contact-why {
+  text-align: center;
+  padding: 30px;
+  background: #fffbf0;
+  border-radius: 4px;
+}
+
+.why-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 0;
+  max-width: 600px;
+  text-align: left;
+}
+
+.why-list li {
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+  color: #222;
+  line-height: 1.6;
+}
+
+.why-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4f8087;
+  font-weight: 700;
+}
+
+@media (max-width: 940px) {
+  .contact-details-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-form {
+    padding: 30px 20px;
+  }
+  
+  .contact-heading {
+    font-size: 1.8rem;
+  }
+  
+  .intro-icon, .why-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Fourmis hero image height alignment */
+.fourmis-grid {
+  align-items: center !important;
+}
+
+.fourmis-figure {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.fourmis-hero-img {
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Chenilles hero image height alignment */
+.chenilles-grid {
+  align-items: center !important;
+}
+
+.chenilles-figure {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+.chenilles-hero-img {
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
