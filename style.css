@@ -4,11 +4,11 @@
 /* <uniquifier>: Use a unique and descriptive class name */
 @font-face {
   font-family: cooperative; /* set name */
-  src: url(/fonts/cooperative/Hafontia\ -\ Cooperative\ Regular.otf); /* url of the font */
+  src: url(fonts/cooperative/Hafontia\ -\ Cooperative\ Regular.otf); /* url of the font */
 }
 @font-face {
-  font-family: cooperative; /* set name */
-  src: url(/fonts/Baron\ Neue\ -\ Personal\ license/Baron_Neue_Bold.otf); /* url of the font */
+  font-family: Baron Neue; /* set name */
+  src: url(fonts/baron_neue/Baron\ Neue.otf); /* url of the font */
 }
 
 
@@ -672,7 +672,7 @@ p {
   margin: 10px 0 18px;
 }
 .page-subtitle {
-  font-family: Cooperative Regular;
+  font-family: cooperative;
   font-weight: 800;
   font-size: 48px;
   letter-spacing: 2px;
@@ -684,7 +684,7 @@ p {
 .diogene-text h2.diogene-heading,
 h2.diogene-heading,
 .section-title {
-  font-family: Cooperative Regular;
+  font-family: cooperative;
   font-weight: 800;
   font-size: 30px;
   text-transform: uppercase;
@@ -692,7 +692,7 @@ h2.diogene-heading,
 }
 
 .vitre-heading {
-  font-family: Cooperative Regular;
+  font-family: cooperative;
   font-weight: 800;
   font-size: 30px;
   margin: 0 0 12px;
